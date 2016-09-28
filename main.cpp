@@ -7,8 +7,8 @@ using namespace std;
 int main() {
     const int ROWSIZE = 3;
     const int BOARDSIZE = ROWSIZE*ROWSIZE;
-    const int MINVALUE = 0;
-    const int MAXVALUE = 15;
+    const int MINVALUE = 1;
+    const int MAXVALUE = 9;
     const int GOALVALUE = 15;
     int move[3]; // x, y, value
     int board[BOARDSIZE];

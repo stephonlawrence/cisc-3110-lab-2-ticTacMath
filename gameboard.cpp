@@ -1,5 +1,6 @@
 #include <iostream>
 #include "gameboard.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -94,15 +95,16 @@ bool checkForWin(int *board, int rowsize, int sumgoal, int minv, int maxv) {
 // position = row * rowsize + column
 void display(int *board, int rowsize, int minv, int maxv){
     int position = 0;
+	const int WSIZE = 2;
     cout << endl;
     for(int x = 0; x < rowsize; x++) {
         cout << "[";
         for(int y = 0; y < rowsize; y++) {
             position = x*rowsize + y;
             if(isSet(board, x, y, minv, maxv, rowsize))
-                cout << board[position];
+                cout << setw(WSIZE) << board[position];
             else
-                cout << "  ";
+                cout << setw(WSIZE) << " ";
         }
         cout << "]" << endl;
     }
