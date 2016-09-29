@@ -1,0 +1,19 @@
+player1:
+Type a position from 1-3 for x, followed by a position from 1-3 for y, followed by an integer from 1-9.
+1 1 5
+[ 5    ]
+[      ]
+[      ]
+player2:
+Type a position from 1-3 for x, followed by a position from 1-3 for y, followed by an integer from 1-9.
+2 2 9
+[ 5    ]
+[   9  ]
+[      ]
+player1:
+Type a position from 1-3 for x, followed by a position from 1-3 for y, followed by an integer from 1-9.
+3 3 1
+[ 5    ]
+[   9  ]
+[     1]
+You won!

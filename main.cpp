@@ -1,6 +1,10 @@
+/*
+    Author: Stephon Lawrence
+    Name: main.cpp
+*/
+#include <iostream>
 #include "playerio.h"
 #include "gameboard.h"
-#include <iostream>
 
 using namespace std;
 
@@ -13,8 +17,10 @@ int main() {
     int move[3]; // x, y, value
     int board[BOARDSIZE];
     int player = 1;
+    // start array elements off with an invalid number
     for (int i = 0; i < BOARDSIZE; i ++)
         board[i] = MINVALUE - 1;
+    
     do {
         cout << "player" << player << ":" << endl;
         getAMove(move, ROWSIZE, MINVALUE, MAXVALUE);

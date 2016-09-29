@@ -1,24 +1,29 @@
+/*
+    Author: Stephon Lawrence
+    Name: gameboard.cpp
+*/
 #include <iostream>
 #include "gameboard.h"
-#include <iomanip>
 
 using namespace std;
 
+// helper for converting from a 2d position to a 1d array
 int getPosition(int x, int y, int rowsize) {
     return x * rowsize + y;
 }
 
-void playAMove(int *board, int *move, int rowsize) {
-    int position = getPosition(move[0], move[1], rowsize);
-    board[position] = move[2];
-}
-
+// helper for telling whether a move on the board was already made
 bool isSet(int *board, int x, int y, int minv, int maxv, int rowsize) {
     // check if value is already set to a valid value
     if(board[getPosition(x, y, rowsize)] >= minv &&
         board[getPosition(x, y, rowsize)] <= maxv)
         return true;
     return false;
+}
+
+void playAMove(int *board, int *move, int rowsize) {
+    int position = getPosition(move[0], move[1], rowsize);
+    board[position] = move[2];
 }
 
 bool validate(int *board, int *move, int rowsize, int minv, int maxv) {
@@ -89,23 +94,4 @@ bool checkForWin(int *board, int rowsize, int sumgoal, int minv, int maxv) {
     if(valid && sum == sumgoal)
         return true;
     return false;
-}
-
-// moves[9] = {value};
-// position = row * rowsize + column
-void display(int *board, int rowsize, int minv, int maxv){
-    int position = 0;
-	const int WSIZE = 2;
-    cout << endl;
-    for(int x = 0; x < rowsize; x++) {
-        cout << "[";
-        for(int y = 0; y < rowsize; y++) {
-            position = x*rowsize + y;
-            if(isSet(board, x, y, minv, maxv, rowsize))
-                cout << setw(WSIZE) << board[position];
-            else
-                cout << setw(WSIZE) << " ";
-        }
-        cout << "]" << endl;
-    }
 }
