@@ -1,6 +1,10 @@
 /*
     Author: Stephon Lawrence
     Name: main.cpp
+    Description: Creates a tic tac math game where 2 players,
+    can play to win by using the number 1-9 to create a row, column
+    or diagonal that adds up to 15. The project details are posted here:
+    https://bc-cisc3110-f16.github.io/Project1.pdf
 */
 #include <iostream>
 #include "playerio.h"
